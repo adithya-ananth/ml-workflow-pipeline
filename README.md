@@ -1,41 +1,54 @@
-# Extrovert vs Introvert Personality Classifier 🎯
+# Extrovert vs Introvert Personality Classifier
 
-:contentReference[oaicite:1]{index=1}
-
----
-
+This project presents a clean machine learning pipeline to classify individuals as **Introverts** or **Extroverts** based on behavioral traits. The entire workflow is implemented in a single Jupyter notebook: `Data_Processing_Workflow.ipynb`.
 
 ---
 
-## 🧠 Dataset
+## 📊 Dataset
 
-**Source:** *Extrovert vs. Introvert Behavior Data* by Rakesh Kapilavayi on Kaggle (CC0 license) :contentReference[oaicite:2]{index=2}  
-
-- :contentReference[oaicite:3]{index=3}  
-- **Features (7):**
-  - :contentReference[oaicite:4]{index=4}  
-  - :contentReference[oaicite:5]{index=5}  
-  - :contentReference[oaicite:6]{index=6}  
-  - :contentReference[oaicite:7]{index=7}  
-  - :contentReference[oaicite:8]{index=8}  
-  - :contentReference[oaicite:9]{index=9}  
-  - :contentReference[oaicite:10]{index=10}  
-- :contentReference[oaicite:11]{index=11}  
-- :contentReference[oaicite:12]{index=12} :contentReference[oaicite:13]{index=13}
+- **Source:** [Kaggle – Extrovert vs. Introvert Behavior Data](https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data)
+- **Size:** ~2,900 rows × 8 columns
+- **Target Column:** `Personality` (Extrovert / Introvert)
 
 ---
 
-## 📝 Notebook: `Data_Processing_Workflow.ipynb`
+## 🧠 Workflow Overview
 
-:contentReference[oaicite:14]{index=14}
+The notebook includes:
 
-1. :contentReference[oaicite:15]{index=15}  
-2. **Data Cleaning:**  
-   - :contentReference[oaicite:16]{index=16}  
-   - :contentReference[oaicite:17]{index=17}  
-   - :contentReference[oaicite:18]{index=18}  
-   - :contentReference[oaicite:19]{index=19}  
-3. :contentReference[oaicite:20]{index=20}  
-4. :contentReference[oaicite:21]{index=21}  
-5. :contentReference[oaicite:22]{index=22}  
-6. :contentReference[oaicite:23]{index=23}
+- **Data Cleaning**
+  - Handles missing values (drops or imputes based on threshold)
+  - Encodes categorical values (`Yes`/`No` → Boolean)
+  - Strips whitespace and removes duplicate entries
+  - Encodes `Personality`: Introvert → 1, Extrovert → 0
+
+- **Data Preparation**
+  - Splits data into training and test sets
+
+- **Model Training**
+  - Uses Logistic Regression with class balancing
+  - Evaluates with accuracy and classification report
+
+- **Model Saving**
+  - Trained model saved using `joblib` for future use
+
+---
+
+## ✅ Getting Started
+
+### 1. Clone the Repository
+
+```
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+### 2. Install dependencies
+```
+pip install -r requirements.txt
+```
+
+### 3. Run the notebook
+```
+jupyter notebook Data_Processing_Workflow.ipynb
+```
